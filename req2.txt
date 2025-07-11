@@ -1,0 +1,48 @@
+#!/bin/bash
+# Setup script for Fast Depth Pipeline on M2 Mac
+
+echo "🚀 Setting up Fast Depth Pipeline for M2 Mac..."
+
+# Create virtual environment
+echo "📦 Creating virtual environment..."
+python3 -m venv venv
+source venv/bin/activate
+
+# Upgrade pip
+pip install --upgrade pip
+
+# Install PyTorch with Metal support
+echo "⚡ Installing PyTorch with Metal backend..."
+pip install torch torchvision torchaudio
+
+# Install other dependencies
+echo "📚 Installing other dependencies..."
+pip install opencv-python
+pip install pillow
+pip install open3d
+pip install numpy
+pip install pathlib
+
+# Install MiDaS dependencies
+echo "🔍 Installing MiDaS dependencies..."
+pip install timm
+pip install matplotlib
+
+# Optional: Install ZoeDepth if available
+echo "🌊 Attempting to install ZoeDepth..."
+pip install git+https://github.com/isl-org/ZoeDepth.git || echo "ZoeDepth installation failed, will use MiDaS instead"
+
+echo "✅ Setup complete!"
+echo ""
+echo "🎯 Quick start commands:"
+echo "   source venv/bin/activate"
+echo "   python fast_depth_pipeline.py --input your_image.jpg --skip-visual"
+echo "   python fast_depth_pipeline.py --input images/ --output results.json --skip-visual"
+echo ""
+echo "⚡ Speed optimization flags:"
+echo "   --size 256      # Use 256x256 input (fastest)"
+echo "   --sample-rate 8 # Use sparse point cloud"
+echo "   --skip-visual   # Skip 3D visualization"
+echo ""
+echo "🧪 Test Metal backend:"
+echo "   python -c \"import torch; print(f'Metal available: {torch.backends.mps.is_available()}')\""

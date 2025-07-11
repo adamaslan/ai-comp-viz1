@@ -1,0 +1,29 @@
+# requirements.txt for AI Document Scanner
+
+# Core data handling and image processing
+numpy
+opencv-python
+Pillow
+
+# OCR Engine wrapper
+pytesseract
+
+# PyTorch and Hugging Face Transformers for AI models
+# Note: This will install the CPU version of PyTorch, which is suitable for the M2 Mac as specified in the script.
+torch
+transformers
+sentencepiece
+
+# --- System Dependencies ---
+# The script also requires Tesseract OCR to be installed on your system.
+#
+# On macOS (using Homebrew):
+# brew install tesseract
+#
+# On Debian/Ubuntu:
+# sudo apt-get update
+# sudo apt-get install tesseract-ocr
+#
+# On Windows:
+# Download and run the installer from the official Tesseract repository.
+# Ensure you add the Tesseract installation directory to your system's PATH.
