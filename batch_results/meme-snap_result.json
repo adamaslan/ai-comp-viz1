@@ -1,0 +1,17 @@
+{
+  "image_path": "public/meme-snap.png",
+  "analysis": {
+    "type": "3d_object",
+    "confidence": 0.6
+  },
+  "processing_time": 7.438768148422241,
+  "point_count": 4096,
+  "depth_map_shape": [
+    256,
+    256
+  ],
+  "points_shape": [
+    4096,
+    3
+  ]
+}

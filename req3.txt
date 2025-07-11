@@ -1,0 +1,25 @@
+# Fast Depth Pipeline Requirements
+# Optimized for M2 Mac with Metal backend support
+
+# Core PyTorch with Metal backend support
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Computer Vision and Image Processing
+opencv-python>=4.7.0
+Pillow>=9.5.0
+numpy>=1.24.0
+
+# 3D Processing
+open3d>=0.17.0
+
+# MiDaS Dependencies
+timm>=0.9.0
+matplotlib>=3.7.0
+
+# Optional: ZoeDepth (install manually if needed)
+# git+https://github.com/isl-org/ZoeDepth.git
+
+# Utilities (pathlib is built-in for Python 3.4+)
+# pathlib - included in Python standard library
